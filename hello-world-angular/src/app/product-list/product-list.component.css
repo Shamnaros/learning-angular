@@ -1,0 +1,110 @@
+.cardss {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  height: 410px;
+  margin-top: 40px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+.ashclrbus{
+  height: 200px;
+  padding-top:1.9em;
+}
+.blueclrbus{
+  height: 200px;
+  padding-top:0.5em;
+}
+
+
+.buttonclass {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.buttonclass:hover {
+  opacity: 0.7;
+}
+
+.badge  {
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  /* animation: badge 1s ease-in-out infinite alternate; */
+}
+
+@keyframes badge {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f8f5f7, 0 0 40px #f7f3f5, 0 0 50px #e7e5e6, 0 0 60px #f3eff1, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #f7f0f3, 0 0 40px #f7f4f5, 0 0 50px #f7f5f6, 0 0 60px #f5f1f3, 0 0 70px #f5f1f3, 0 0 80px #ff4da6;
+  }
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.closebtn {
+  padding-left: 10px;
+  color: #888;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: #000;
+}
+ 
+.chip{
+  display: flex;
+  flex:start;
+    padding: 0 25px; 
+    font-size: 18px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    white-space: nowrap;
+    margin: 1em;
+}
+.continer{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+
+}
