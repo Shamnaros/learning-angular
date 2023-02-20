@@ -22,11 +22,13 @@ export class ProductListComponent {
   selectedditem: number | undefined;
   selecteditem: any[] = [];
   selectedproduct: any[] = [];
-  index: number | undefined
+  index: number | undefined;
+  tt : number = 0;
   
 
   public selectitem(ida: number) {
     this.selectedditem = ida;
+    this.tt = this.tt + 1;
     // this.selecteditem.push(ida);
     // this.index = this.Products.indexOf(this.Products[ida]); 
     this.selectedproduct.push(this.Products[ida - 1])
@@ -44,6 +46,9 @@ export class ProductListComponent {
   
 
     public deleteitem(idb: number) {
+
+      this.tt = this.tt - 1;
+
       const index = this.selecteditem.findIndex(item => item.itemid === idb);
     
       if (index !== -1) {

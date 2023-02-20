@@ -13,9 +13,10 @@ const routes: Routes = [
   {path: "jumbotron", component: JumbotronComponent},
   {path: "bootstrap-form", component: BootstrapFormComponent},
   {path: "bootstrap-table", component: BootstrapTableComponent},
-  {path:'Student', component: StudentComponent},
-  {path:'Product', component: ProductListComponent},
-  {path:'HelloWorldComponent', component: HelloWorldComponent}
+  {path: "Student", component: StudentComponent},
+  {path: "Product", component: ProductListComponent},
+  {path: "HelloWorldComponent", component: HelloWorldComponent},
+  {path: "feature", loadChildren: () => import('./feature-module/feature-module.module').then(m => m.FeatureModuleModule) }
 ];
 
 @NgModule({
