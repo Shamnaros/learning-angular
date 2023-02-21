@@ -1,7 +1,8 @@
-body, html {
+body {
     height: 100%;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    
   }
   
   * {
@@ -9,20 +10,13 @@ body, html {
   }
   
   .bg-image {
-    /* The image used */
     background-image: url("https://wallpaperaccess.com/full/3097725.jpg");
-    
-    /* Add the blur effect */
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    
-    /* Full height */
-    height: 100%; 
-    
-    /* Center and scale the image nicely */
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  max-height: fit-content;
   }
   
   /* Position text in the middle of the page/image */
