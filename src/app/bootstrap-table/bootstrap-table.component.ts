@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -6,20 +6,19 @@ import { Subject } from 'rxjs';
   templateUrl: './bootstrap-table.component.html',
   styleUrls: ['./bootstrap-table.component.css']
 })
-export class BootstrapTableComponent implements OnInit {
+export class BootstrapTableComponent  {
 
   employees = [
-    {id: 1, name: "E 001", description: "E 001 des", email: "e001@email.com"},
-    {id: 2, name: "E 002", description: "E 002 des", email: "e002@email.com"},
-    {id: 3, name: "E 003", description: "E 003 des", email: "e003@email.com"},
-    {id: 4, name: "E 004", description: "E 004 des", email: "e004@email.com"}
+    {id: 1, name: "name 1111", description: "1111 description description", email: "1111nameemail@gmail.com"},
+    {id: 2, name: "name 2222", description: "2222 description description", email: "2222nameemail@gmail.com"},
+    {id: 3, name: "name 3333", description: "3333 description description", email: "3333nameemail@gmail.com"},
+    {id: 4, name: "name 44444", description: "4444 description description", email: "4444nameemail@gmail.com"}
   ];
   selectedEmployee: any;
   // console.log(employees);
-  constructor() { }
 
-  ngOnInit() {    
-  }
+
+  
 
   public createEmployee(e: {id: number, name: string, description: string, email: string}){
     this.employees.push(e);
