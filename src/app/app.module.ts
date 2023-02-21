@@ -11,6 +11,7 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { BootstrapFormComponent } from './bootstrap-form/bootstrap-form.component';
 import { BootstrapTableComponent } from './bootstrap-table/bootstrap-table.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HeaderComponent } from './header/header.component';
     JumbotronComponent,
     BootstrapFormComponent,
     BootstrapTableComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
