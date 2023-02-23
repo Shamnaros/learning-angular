@@ -1,26 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
+import { BootstrapServiceService } from '../bootstrap-service.service';
+import { Employee } from '../employee';
 
 @Component({
   selector: 'app-bootstrap-table',
   templateUrl: './bootstrap-table.component.html',
   styleUrls: ['./bootstrap-table.component.css']
 })
-export class BootstrapTableComponent  {
+export class BootstrapTableComponent implements OnInit {
+  employees: Employee[] = [];
+  employeee: any[] = [];
+  tt : number = 0;
 
-  employees = [
-    {id: 1, name: "name 1111", description: "1111 description description", email: "1111nameemail@gmail.com"},
-    {id: 2, name: "name 2222", description: "2222 description description", email: "2222nameemail@gmail.com"},
-    {id: 3, name: "name 3333", description: "3333 description description", email: "3333nameemail@gmail.com"},
-    {id: 4, name: "name 44444", description: "4444 description description", email: "4444nameemail@gmail.com"}
-  ];
+  employee = [
+    {id: '1', name: "name 1111", email: "1111nameemail@gmail.com", description: "1111 description description"}
+  ]; 
+
+  constructor(private employeeService: BootstrapServiceService) {}
+
+  ngOnInit() {
+    this.employees = this.employeeService.getEmployees();
+    this.employeee.push(this.employee)
+    this.tt = this.employeee.length;
+    console.log(this.employeee)
+
+  }
+  // employees = [
+  //   {id: '1', name: "name 1111", email: "1111nameemail@gmail.com", description: "1111 description description"},
+  //   {id: '2', name: "name 2222", email: "2222nameemail@gmail.com", description: "2222 description description"},
+  //   {id: '3', name: "name 3333", email: "3333nameemail@gmail.com", description: "3333 description description"},
+  //   {id: '4', name: "name 4444", email: "4444nameemail@gmail.com", description: "4444 description description"}
+  // ];
   selectedEmployee: any;
   // console.log(employees);
 
-
   
 
-  public createEmployee(e: {id: number, name: string, description: string, email: string}){
+  public createEmployee(e: {id: string, name: string, description: string, email: string}){
     this.employees.push(e);
   }
   

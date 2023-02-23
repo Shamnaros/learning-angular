@@ -3,4 +3,21 @@
     <p class="lead">
       This tutorial teaches you how to integrate Bootstrap 5 with Angular 14  
     </p>
+    <h1>Employee List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
