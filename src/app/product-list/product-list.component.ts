@@ -27,17 +27,15 @@ export class ProductListComponent {
   
 
   public selectitem(ida: number) {
-    this.selectedditem = ida;
     this.tt = this.tt + 1;
-    // this.selecteditem.push(ida);
-    // this.index = this.Products.indexOf(this.Products[ida]); 
+    
     this.selectedproduct.push(this.Products[ida - 1])
     this.selecteditem.push({ itemid: this.item, itemsrc: this.Products[ida - 1].src, itemname: this.Products[ida - 1].name, itemprice: this.Products[ida - 1].price });
-    // this.selecteditem[this.selecteditem.length].id = this.item;
+
     this.item++;
     var t = this.Products[ida - 1].price;
     this.total = this.total + t;
-    // console.log(this.total);
+
     this.total = this.total;
     console.log(this.selecteditem[this.item-1]);
 

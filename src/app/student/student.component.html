@@ -1,19 +1,27 @@
-<p>student works!</p>
-<p>
+<!DOCTYPE html>
+<html>
+  <header>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  </header>
+  <body class="container column" style="margin-top: 70px; text-align: center;">
+    <p>student works!</p>
+    <p>
+    
+      hello-world works!<br>
+      {{name}}<br>
+      {{x}}
+      
+      </p>
+    <div >
+      <input [(ngModel)]="x" value="list" type="text" name="id" class="form-control" id="id" aria-describedby="idHelp"  readonly>
 
-  hello-world works!
-  {{names}}
-  
-  </p>
-<div ng-app="" ng-init="name=[
-{name:'Jani',country:'Norway'},
-{name:'Hege',country:'Sweden'},
-{name:'Kai',country:'Denmark'}];x">
-
-<ul>
-  <li ng-repeat="x in name">
-    <!-- {{ x.name + ', ' + x.country }} -->
-  </li>
-</ul>
-
-</div>
+      <input [(ngModel)]="name" value="dsvalid" #ctrl="ngModel"   >
+    
+      <p>Value: {{ name }} </p>
+      <p>Valid: {{ ctrl.valid }}</p>
+    
+      <button (click)="setValue()">Set value</button>
+    
+    </div>
+  </body>
+</html>
