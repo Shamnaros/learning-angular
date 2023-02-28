@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-feature-module',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./feature-module.component.css']
 })
 export class FeatureModuleComponent {
+  @ViewChild('widgetsContent')
+  widgetsContent!: ElementRef;
+  scrollLeft(){
+    this.widgetsContent.nativeElement.scrollLeft -= 1150;
+  }
 
+  scrollRight(){
+    this.widgetsContent.nativeElement.scrollLeft += 1150;
+  }
 }

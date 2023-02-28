@@ -11,14 +11,16 @@ import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
-   {path:  "", pathMatch:  "full",redirectTo:  "", component: HomeComponent},
+  // {path:  "", pathMatch:  "full",redirectTo:  "", component: HomeComponent},
+  {path:  "", component: HomeComponent},
   {path: "jumbotron", component: JumbotronComponent},
   {path: "bootstrap-form", component: BootstrapFormComponent},
   {path: "bootstrap-table", component: BootstrapTableComponent},
   {path: "Student", component: StudentComponent},
   {path: "Product", component: ProductListComponent},
   {path: "HelloWorldComponent", component: HelloWorldComponent},
-  {path: "feature", loadChildren: () => import('./feature-module/feature-module.module').then(m => m.FeatureModuleModule) }
+  {path: "feature", loadChildren: () => import('./feature-module/feature-module.module').then(m => m.FeatureModuleModule) },
+  {path: "orders", loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) }
 ];
 
 @NgModule({
