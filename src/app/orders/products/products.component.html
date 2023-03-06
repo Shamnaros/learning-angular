@@ -1,126 +1,66 @@
 <!-- <br><br><br> -->
 <!-- <h1>Product-List </h1> -->
+<button class=" fixed-top btn cart navbar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+  aria-controls="offcanvasRight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cart</button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+
+
+    <div class=" card text-center sticky-bottom" *ngIf="selecteditem">
+      <div class="card-header">
+        <div class="column continer">
+          <div class="chip " *ngFor="let selectproduct of selecteditem">
+            <img [src]="selectproduct.itemsrc" alt="Person" width="96" height="96">
+            <span class="test1">{{selectproduct.itemname}}</span>
+            <span class="closebtn" (click)="deleteitem(selectproduct.itemid)">&times;</span>
+          </div>
+        </div>
+        <!-- {{selecteditem| json}}
+        {{index}}                   onclick="this.parentElement.style.display='none'"
+        {{selectedproduct| json}} -->
+      </div>
+      <div class="card-block">
+        <br>
+        <h4 class="card-title" *ngIf="total">
+          Your Total Is {{tt}} Items : {{total | currency:'INR' }}
+        </h4>
+        <br>
+        <!-- <p class="card-text" *ngIf="total">
+          Your total is {{tt}} items : {{total | currency:'INR' }}
+        </p> -->
+      </div>
+    </div>
+
+
+  </div>
+</div>
 <br>
 
-<div class="container " >
+<div class="container ">
 
 
   <div class="row  ">
 
-
-    <!-- <div class="row  ">
-      <div class="cardss">
-      <img src="https://www.eichertrucksandbuses.com/front/images/buses_img01.png" alt="Denim Jeans"
-        style="width:100%; height:200px">
-      <h1>AC Air Bus A</h1>
-      <p class="price">$19.99</p>
-      <p>Sleep with comfort..</p>
-      <p><button class="buttonclass">Add to Cart<span class="badge">2</span></button></p>
-    </div>
-
-
-    <div class="cardss">
-      <div class="ashclrbus"><img src="https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/blue-bus?qlt=82&wid=1024&ts=1660212095501&dpr=off&fit=constrain" alt="Denim Jeans" style="width:100%"></div>
-      <h1>AC Air Bus B</h1>
-      <p class="price">$19.99</p>
-      <p>Sleep with comfort..</p>
-      <p><button class="buttonclass">Add to Cart</button></p>
-    </div>
-
-
-    <div class="cardss">
-      <div class="blueclrbus"><img src="https://www.tatamotors.com/wp-content/uploads/2019/10/04141358/press-04oct19b-03.jpg" alt="Denim Jeans" style="width:100%; height:98%"></div>
-      <h1>AC Air Bus C</h1>
-      <p class="price">$19.99</p>
-      <p>Sleep with comfort..</p>
-      <p><button class="buttonclass">Add to Cart</button></p>
-    </div>
-
-
-    <div class="cardss">
-      <img src="https://cms.eichertrucksandbuses.com/uploads/truck/sub-category/d2939914208dbb03c2a9d3534e7b967f.png" alt="Denim Jeans" style="width:100%; height:200px">
-      <h1>AC Air Bus D</h1>
-      <p class="price">$19.99</p>
-      <p>Sleep with comfort..</p>
-      <p><button class="buttonclass">Add to Cart</button></p>
-    </div>
-
-
-    <div class="cardss">
-      <img src="https://www.eichertrucksandbuses.com/front/images/buses_img01.png" alt="Denim Jeans" style="width:100%; height:200px">
-      <h1>AC Air Bus A</h1>
-      <p class="price">$19.99</p>
-      <p>Sleep with comfort..</p>
-      <p><button class="buttonclass">Add to Cart</button></p>
-    </div>
-
-
-    <div class="cardss">
-      <div class="ashclrbus"><img src="https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/blue-bus?qlt=82&wid=1024&ts=1660212095501&dpr=off&fit=constrain" alt="Denim Jeans" style="width:100%"></div>
-      <h1>AC Air Bus B</h1>
-      <p class="price">$19.99</p>
-      <p>Sleep with comfort..</p>
-      <p><button class="buttonclass">Add to Cart</button></p>
-    </div>
-
-
-    <div class="cardss">
-      <div class="blueclrbus"><img src="https://www.tatamotors.com/wp-content/uploads/2019/10/04141358/press-04oct19b-03.jpg" alt="Denim Jeans" style="width:100%; height:98%"></div>
-      <h1>AC Air Bus C</h1>
-      <p class="price">$19.99</p>
-      <p>Sleep with comfort..</p>
-      <p><button class="buttonclass">Add to Cart</button></p>
-    </div>
-
-
-    <div class="cardss">
-      <img src="https://cms.eichertrucksandbuses.com/uploads/truck/sub-category/d2939914208dbb03c2a9d3534e7b967f.png" alt="Denim Jeans" style="width:100%; height:200px">
-      <h1>AC Air Bus D</h1>
-      <p class="price">$19.99</p>
-      <p>Sleep with comfort..</p>
-      <p><button class="buttonclass">Add to Cart</button></p>
-    </div> 
-  </div> -->
-
-
-    <div class="cardss " *ngFor="let product of Products"> 
+    <div class="cardss " *ngFor="let product of Products">
       <img src="{{ product.src }}" alt="Denim Jeans" style="width:100%; height:200px">
       <h1>{{ product.name }}</h1>
       <p class="price">{{ product.price | currency:'INR' }}</p>
       <p>{{ product.description }}</p>
-      <p><button class="buttonclass" (click)="selectitem(product.id)" >Add to Cart</button></p>
+      <p><button class="buttonclass" (click)="selectitem(product.id)">Add to Cart</button></p>
       <!-- <p><button class="buttonclass" (click)="selectitem(product.id)" >Add to Cart<span class="badge" *ngIf="selectedditem === product.id" >{{selectedditem}}</span></button></p> -->
-     
+
     </div>
 
 
   </div>
- 
-    
-  <div class=" card text-center sticky-bottom"  *ngIf="selecteditem">
-    <div class="card-header">
-      <div class="column continer" >
-      <div class="chip " *ngFor="let selectproduct of selecteditem">
-        <img [src]="selectproduct.itemsrc" alt="Person" width="96" height="96">
-        <span class="test1">{{selectproduct.itemname}}</span> 
-        <span class="closebtn" (click)="deleteitem(selectproduct.itemid)">&times;</span>
-      </div></div>
-      <!-- {{selecteditem| json}}
-      {{index}}                   onclick="this.parentElement.style.display='none'"
-      {{selectedproduct| json}} -->
-    </div>
-    <div class="card-block">
-      <br>
-      <h4 class="card-title" *ngIf="total">
-        Your Total Is {{tt}} Items : {{total | currency:'INR' }}
-      </h4>
-      <br>
-      <!-- <p class="card-text" *ngIf="total">
-        Your total is {{tt}} items : {{total | currency:'INR' }}
-      </p> -->
-    </div>
-  </div>
+
+
+
 
 
 </div>
-

@@ -8,11 +8,12 @@ import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { StudentComponent } from './student/student.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-  // {path:  "", pathMatch:  "full",redirectTo:  "", component: HomeComponent},
-  {path:  "", component: HomeComponent},
+  {path:  "", pathMatch:  "full",redirectTo:  "", component: LoginComponent},
+  {path:  "Home", component: HomeComponent},
   {path: "jumbotron", component: JumbotronComponent},
   {path: "bootstrap-form", component: BootstrapFormComponent},
   {path: "bootstrap-table", component: BootstrapTableComponent},
